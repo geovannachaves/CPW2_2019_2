@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./src/styles/estilos.css">
+    <title>Lista de Compras</title>
+</head>
+
+<body>
+
+    <div id="header">
+        <img src="./src/img/mercado.png" alt="Imagem do mercado">
+        <div class="calibragem"></div>
+        <h1>
+            Lista de Compras
+        </h1>
+
+    </div>
+
+    <div id="formularioSelect">
+        <form  onsubmit="incluirItem(event)">
+            <label for="item">Itens:</label>
+            <select onchange="carregarUnidadeDeMedida(event)" required name="select" id="select">
+                <option value="" disabled selected>Selecione um item</option>
+            </select>
+            <br>
+            <label for="quantidade">Quantidade:</label>
+            <input type="number" required name="numero" id="quantidade" min="0" > 
+            <span id="unidadeDeMedida">unidade de medida</span>
+            <br>
+            <input  type="submit" value="Adicionar">
+
+        </form>
+
+    </div>
+
+    <div id="lista">
+
+        <label for="lista">Minha lista:</label>
+
+
+    <input onkeyup="filtrarLista()" placeholder="Digite a descrição do item" type="text" id="filtro">
+
+        <div id="listaDosItens"></div>
+
+    </div>
+
+    <script src="./src/js/index.js"></script>
+
+</body>
+
+</html>
